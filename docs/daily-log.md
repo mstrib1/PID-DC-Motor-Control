@@ -12,3 +12,11 @@
     - Observed how they reacted when noise was introduced
     - Plotted simulated target vs. measured RPM
     - Found Kd wasn't needed, only a PI controller may be necessary
+## May 19, 2026
+    - Full Motor Circuit Built
+## August 12, 2026
+    - Completed the code framework for the motor to run
+    - Calculated RPM and Error
+    - Completed PI Control
+    - Setup the graphing environment
+    - Collected Graphing Data for PI Control

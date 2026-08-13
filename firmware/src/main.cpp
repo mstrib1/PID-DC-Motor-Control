@@ -29,10 +29,15 @@ void IRAM_ATTR countPulse() {
 // PID Control Variables
 int basePWM = 0;
 float errorIntegral = 0;
+float previousError = 80;
+bool firstDerivative = true;
+float rateOfChange = 0;
 float Kp = 0.2;
 float Ki = 0.02;
+float Kd = 0.003;
 float pOutput = 0;
 float iOutput = 0;
+float dOutput = 0;
 int currentPWM = basePWM;
 
 // Setup
@@ -69,12 +74,21 @@ void loop() {
     float dt = (currentTime - lastSampleTime) / 1000.0;
     float rpm = 60 * (pulses / 1920.0) / dt;
     float error = targetRPM - rpm;
+    if(firstDerivative) {
+      firstDerivative = false;
+      previousError = error;
+    }
+    else {
+      rateOfChange = (error - previousError) / dt;
+      previousError = error;
+    }
     errorIntegral += error * dt;
     lastSampleTime = currentTime;
     // PID Control
     pOutput = Kp * error;
     iOutput = Ki * errorIntegral;
-    int pwmOutput = constrain(currentPWM + pOutput + iOutput, 0, 255);
+    dOutput = Kd * rateOfChange;
+    int pwmOutput = constrain(currentPWM + pOutput + iOutput + dOutput, 0, 255);
     ledcWrite(pwmChannel, pwmOutput);
     currentPWM = pwmOutput;
     Serial.printf("%.2f,%.2f\n", targetRPM, rpm);
