@@ -19,7 +19,7 @@
     - Completed the code framework for the motor to run
     - Calculated RPM and Error
     - Completed PI Control
-    - In order to begin collecting visual data, I used AI assistance to generate code to read serial data from the ESP32 and plot it onto a graph. I reviewed the code thoroughly to understand it.
+    - In order to begin collecting visual data, I used AI assistance to generate code to read serial data from the ESP32 and plot it onto a graph. I reviewed the code thoroughly to understand it how it reads the serial data from the ESP32 and plots that onto a grid.
     - Collected Graphing Data for PI Control
 ## August 20, 2026
     - Implemented D control, finishing full PID control
