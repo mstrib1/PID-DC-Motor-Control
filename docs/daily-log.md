@@ -21,11 +21,11 @@
     - Completed PI Control
     - In order to begin collecting visual data, I used AI assistance to generate code to read serial data from the ESP32 and plot it onto a graph. I reviewed the code thoroughly to understand it how it reads the serial data from the ESP32 and plots that onto a grid.
     - Collected Graphing Data for PI Control
-## August 20, 2026
+## August 13, 2026
     - Implemented D control, finishing full PID control
     - D term added unnecessary noise, ommitted for now
     - Took photos of circuit
-## August 28, 2026
+## August 23, 2026
     - Tuned Kp, Ki, and Kd to a reasonable amount
     - Reached a steady state error of about 2%-4% with lower RPM's (80RPM)
     - Collected additional data
