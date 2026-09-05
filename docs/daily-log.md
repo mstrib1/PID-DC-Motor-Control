@@ -32,3 +32,5 @@
 ## September 2, 2026
     - Uploaded images to Github
     - Populated missing entries from daily-log.md
+## September 4, 2026
+    - Fully populated README excluding testing and results
